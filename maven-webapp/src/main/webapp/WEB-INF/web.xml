@@ -1,0 +1,53 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>HelloFilter</filter-name>
+  	<display-name>HelloFilter</display-name>
+  	<description></description>
+  	<filter-class>com.zensar.servlets.HelloFilter</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>TimeFilter</filter-name>
+  	<display-name>TimeFilter</display-name>
+  	<description></description>
+  	<filter-class>com.zensar.servlets.TimeFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>HelloFilter</filter-name>
+  	<url-pattern>/login</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>TimeFilter</filter-name>
+  	<url-pattern>/login</url-pattern>
+  </filter-mapping>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<display-name>LoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.zensar.servlets.LoginServlet</servlet-class>
+  	<init-param>
+  		<param-name>driver</param-name>
+  		<param-value>com.mysql.jdbc.Driver</param-value>
+  	</init-param>
+  	<init-param>
+  			<param-name>url</param-name>
+  		<param-value>jdbc:mysql://localhost:3306/amitdb</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>username</param-name>
+  		<param-value>root</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>password</param-name>
+  		<param-value>root</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
